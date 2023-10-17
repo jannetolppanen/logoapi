@@ -5,10 +5,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {
   Typography,
   AppBar,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
   CssBaseline,
   Grid,
   Toolbar,
@@ -19,23 +15,29 @@ import AddReactionIcon from '@mui/icons-material/AddReaction';
 
 const SearchBar = ({ filter, setFilter }) => {
   const handleFilterChange = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     setFilter(event.target.value);
   };
 
   // ei vielä toimi
   const resetFilter = () => {
-    console.log('reset')
-    setFilter('')
-    console.log(filter)
-  }
-
+    console.log('reset');
+    setFilter('');
+    console.log(filter);
+  };
 
   return (
     <>
-      <Grid container spacing={2} justifyContent='center' alignItems='center' gutterBottom>
+      <Grid
+        container
+        spacing={2}
+        justifyContent='center'
+        alignItems='center'
+        sx={{ mb: 5 }}
+      >
         <Grid item>
           <TextField
+            value={filter}
             id='outlined-basic'
             label='type company name...'
             variant='outlined'
